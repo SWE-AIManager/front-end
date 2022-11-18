@@ -11,13 +11,14 @@ import{
     style,
 } from "react-native";
 
-export default function Login(){
+export default function Login( {navigation} ){
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
+    const onPress = () => navigation.push('Home');
 
     return(
         <View style={styles.container}>
-            <Image style={styles.image} source={require("C:\\Users\\nyung\\AIMom\\assets\\logo.png")}/>
+            <Image style={styles.image} source={require("C:\\Users\\nyung\\AIManager\\assets\\logo.png")}/>
 
             <StatusBar style="auto"/>
             <View style={styles.inputView}>
@@ -43,7 +44,7 @@ export default function Login(){
                 <Text style={styles.loginFailed}>Login Failed. Please re-enter Id & Password.</Text>
             </View>
 
-            <TouchableOpacity style={styles.loginBtn}>
+            <TouchableOpacity style={styles.loginBtn} onPress={onPress}>
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
         </View>
