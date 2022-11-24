@@ -1,9 +1,13 @@
 import Login from './login/Login'
 import Home from './home/Home'
-import Detail from './detail/Detail'
+import Exercise from './detail/Exercise'
+import Meal from './detail/Meal'
+import Cleaning from './detail/Cleaning'
 
 export{
     Login,
     Home,
-    Detail,
+    Exercise,
+    Meal,
+    Cleaning,
 }
