@@ -1,4 +1,5 @@
 import Login from './login/Login'
+import SignIn from './login/SignIn'
 import Home from './home/Home'
 import Control from './bottomTab/Control'
 import Exercise from './bottomTab/Exercise'
@@ -7,6 +8,7 @@ import Cleaning from './bottomTab/Cleaning'
 
 export{
     Login,
+    SignIn,
     Home,
     Control,
     Exercise,

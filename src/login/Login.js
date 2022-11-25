@@ -8,13 +8,15 @@ import{
     TextInput,
     Button,
     TouchableOpacity,
+    Pressable,
     style,
 } from "react-native";
 
 export default function Login( {navigation} ){
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
-    const onPress = () => navigation.push('Home');
+    const onPress1 = () => navigation.push('Home');
+    const onPress0 = () => navigation.push('SignIn');
 
     return(
         <View style={styles.container}>
@@ -44,9 +46,13 @@ export default function Login( {navigation} ){
                 <Text style={styles.loginFailed}>Login Failed. Please re-enter Id & Password.</Text>
             </View>
 
-            <TouchableOpacity style={styles.loginBtn} onPress={onPress}>
+            <TouchableOpacity style={styles.loginBtn} onPress={onPress1}>
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
+
+            <Pressable onPress={onPress0}>
+                <Text style={styles.signInText}> 회원가입 </Text>
+            </Pressable>
         </View>
     );
 }
@@ -94,5 +100,11 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: 40,
         backgroundColor: "#fca503",
+    },
+
+    signInText: {
+        fontSize: "13px",
+        marginTop: 10,
+        textDecorationLine: 'underline',
     },
 });
