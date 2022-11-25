@@ -8,7 +8,7 @@ import{
     style,
 } from 'react-native';
 
-export default function SignIn( {Navigation} ){
+export default function SignIn( {navigation} ){
     const [name, setName] = useState('');
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');

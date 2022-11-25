@@ -8,7 +8,6 @@ import{
     TextInput,
     Button,
     TouchableOpacity,
-    Pressable,
     style,
 } from "react-native";
 
@@ -50,9 +49,9 @@ export default function Login( {navigation} ){
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
 
-            <Pressable onPress={onPress0}>
+            <TouchableOpacity onPress={onPress0}>
                 <Text style={styles.signInText}> 회원가입 </Text>
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 }

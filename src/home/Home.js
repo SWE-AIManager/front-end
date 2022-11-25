@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import{
     View,
+    Text,
     TouchableOpacity,
     Image,
     StyleSheet,
@@ -14,7 +15,35 @@ export default function Home( {navigation} ){
 
     return (
         <View style={styles.container}>
-            <View style={styles.empty}/>
+            <View style={styles.box}>
+                <Text style={styles.question}> 운동했어~? </Text>
+                <View style={styles.yesOrNo}>
+                    <TouchableOpacity style={styles.yesBtn}>
+                        <Text style={styles.yesText}>YES</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.noBtn}>
+                        <Text style={styles.noText}>NO</Text>
+                    </TouchableOpacity>
+                </View>
+            <Text style={styles.question}> 밥 먹었어~? </Text>
+                <View style={styles.yesOrNo}>
+                    <TouchableOpacity style={styles.yesBtn}>
+                        <Text style={styles.yesText}>YES</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.noBtn}>
+                        <Text style={styles.noText}>NO</Text>
+                    </TouchableOpacity>
+                </View>
+                <Text style={styles.question}> 청소했어~? </Text>
+                <View style={styles.yesOrNo}>
+                    <TouchableOpacity style={styles.yesBtn}>
+                        <Text style={styles.yesText}>YES</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.noBtn}>
+                        <Text style={styles.noText}>NO</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
             <View style={styles.bottomBar}>
                 <TouchableOpacity onPress={onPress1}>
                     <Image style={styles.exercise} source={require("C:\\Users\\nyung\\AIManager\\assets\\exercise.png")}/>
@@ -38,8 +67,41 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
-    empty: {
-        flex: 8,
+    box: {
+        flex: 7,
+        justifyContent: "center",
+    },
+
+    question: {
+        fontSize: 18,
+        marginTop: 60,
+        marginLeft: 70,
+    },
+
+    yesOrNo: {
+        flexDirection : "row",
+    },
+
+    yesBtn: {
+        width: "30%",
+        borderRadius: 25,
+        height: 50,
+        marginTop: 10,
+        marginLeft: 70,
+        backgroundColor: "#fca503",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+
+    noBtn: {
+        width: "30%",
+        borderRadius: 25,
+        height: 50,
+        marginTop: 10,
+        marginLeft: 20,
+        backgroundColor: "#fcebca",
+        alignItems: "center",
+        justifyContent: "center",
     },
 
     bottomBar: {
@@ -51,27 +113,28 @@ const styles = StyleSheet.create({
     exercise: {
         width: 80,
         height: 80,
+        marginTop: 13,
         marginLeft: 30,
     },
 
     meal: {
         width: 60,
         height: 60,
-        marginTop: 10,
+        marginTop: 23,
         marginLeft: 20,
     },
 
     cleaning: {
         width: 55,
         height: 55,
-        marginTop: 10,
+        marginTop: 23,
         marginLeft: 30,
     },
 
     controller: {
         width: 55,
         height: 55,
-        marginTop: 10,
+        marginTop: 23,
         marginLeft: 25,
     },
 });
