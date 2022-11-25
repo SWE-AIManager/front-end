@@ -11,9 +11,10 @@ function App(){
             <Stack.Navigator initialRouteName="Login">
                 <Stack.Screen name="Login" component={pages.Login} options={{headerShown:false}}/>
                 <Stack.Screen name="Home" component={pages.Home} options={{headerShown:false}}/>
-                <Stack.Screen name="Exercise" component={pages.Exercise} options={{headerShown:false}}/>
-                <Stack.Screen name="Meal" component={pages.Meal} options={{headerShown:false}}/>
-                <Stack.Screen name="Cleaning" component={pages.Cleaning} options={{headerShown:false}}/>
+                <Stack.Screen name="Control" component={pages.Control}/>
+                <Stack.Screen name="Exercise" component={pages.Exercise}/>
+                <Stack.Screen name="Meal" component={pages.Meal}/>
+                <Stack.Screen name="Cleaning" component={pages.Cleaning}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -10,7 +10,6 @@ import {
 const Meal = () => {
     return(
         <View style={styles.container}>
-            <Text style={styles.category2}>Meal</Text>
             <View style={{alignItems: "center"}}>
                 <Image style={styles.image} source={require("C:\\Users\\nyung\\AIManager\\assets\\chicken.jpg")}/>
                 <Text style={styles.text}> ▲ Chicken </Text>
@@ -25,14 +24,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
-    },
-
-    category2: {
-        fontSize: "25px",
-        height: 30,
-        marginTop: 50,
-        color: "#808080",
-        marginLeft: 10,
     },
 
     image: {
