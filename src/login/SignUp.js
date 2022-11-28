@@ -7,13 +7,28 @@ import{
     StyleSheet,
     style,
 } from 'react-native';
+import axios from "axios";
 
-export default function SignIn( {navigation} ){
+export default function SignUp( {navigation} ){
     const [name, setName] = useState('');
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [address, setAddress] = useState('');
-    const onPress = () => navigation.push('Login');
+    const confirm = async() => {
+        axios.post("http://192.168.10.105:8000/app/users", {
+            user_id: id,
+            name: name,
+            pw: password,
+            location: address
+        })
+        .then(function(response) {
+            if(response.statusCode = 200) {
+                navigation.push('Login');
+            }
+        }).catch(function(error){
+            console.log(error);
+        })
+    };
 
     return(
         <View style={styles.container}>
@@ -64,7 +79,7 @@ export default function SignIn( {navigation} ){
                 />
             </View>
 
-            <TouchableOpacity style={styles.SignUpBtn} onPress={onPress}>
+            <TouchableOpacity style={styles.SignUpBtn} onPress={confirm}>
                 <Text style={styles.SignUpText}> SIGN UP </Text>
             </TouchableOpacity>
         </View>

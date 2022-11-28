@@ -6,19 +6,68 @@ import{
     Image,
     StyleSheet,
 } from "react-native";
+import id from "C:\\Users\\nyung\\AIManager\\src\\login\\Login.js";
 
 export default function Home( {navigation} ){
     const onPress1 = () => navigation.push('Exercise');
     const onPress2 = () => navigation.push('Meal');
     const onPress3 = () => navigation.push('Cleaning');
     const onPress4 = () => navigation.push('Control');
+    const confirmExercise = async() => {
+        var date = new date();
+        var dateStr = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() + " "
+                        + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        axios.post("http://192.168.10.105:8000/app/exercise", {
+            recent_exercise_id: id,
+            recent_exercise: dateStr
+        })
+        .then(function(response) {
+            if(response.statusCode = 200) {
+                Alert.alert("Exercise Saved");
+            }
+        }).catch(function(error){
+            console.log(error);
+        })
+    };
+    const confirmMeal = async() => {
+        var date = new date();
+        var dateStr = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() + " "
+                        + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        axios.post("http://192.168.10.105:8000/app/meal", {
+            recent_meal_id: id,
+            recent_meal: dateStr
+        })
+        .then(function(response) {
+            if(response.statusCode = 200) {
+                Alert.alert("Meal Saved");
+            }
+        }).catch(function(error){
+            console.log(error);
+        })
+    };
+    const confirmCleaning = async() => {
+        var date = new date();
+        var dateStr = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() + " "
+                        + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        axios.post("http://192.168.10.105:8000/app/meal", {
+            recent_clean_id: id,
+            recent_clean: dateStr
+        })
+        .then(function(response) {
+            if(response.statusCode = 200) {
+                Alert.alert("Cleaning Saved");
+            }
+        }).catch(function(error){
+            console.log(error);
+        })
+    };
 
     return (
         <View style={styles.container}>
             <View style={styles.box}>
                 <Text style={styles.question}> 운동했어~? </Text>
                 <View style={styles.yesOrNo}>
-                    <TouchableOpacity style={styles.yesBtn}>
+                    <TouchableOpacity style={styles.yesBtn} onPress={confirmExercise}>
                         <Text style={styles.yesText}>YES</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.noBtn}>
@@ -27,7 +76,7 @@ export default function Home( {navigation} ){
                 </View>
             <Text style={styles.question}> 밥 먹었어~? </Text>
                 <View style={styles.yesOrNo}>
-                    <TouchableOpacity style={styles.yesBtn}>
+                    <TouchableOpacity style={styles.yesBtn} onPress={confirmMeal}>
                         <Text style={styles.yesText}>YES</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.noBtn}>
@@ -36,7 +85,7 @@ export default function Home( {navigation} ){
                 </View>
                 <Text style={styles.question}> 청소했어~? </Text>
                 <View style={styles.yesOrNo}>
-                    <TouchableOpacity style={styles.yesBtn}>
+                    <TouchableOpacity style={styles.yesBtn} onPress={confirmCleaning}>
                         <Text style={styles.yesText}>YES</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.noBtn}>

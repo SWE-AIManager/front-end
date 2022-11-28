@@ -10,12 +10,28 @@ import{
     TouchableOpacity,
     style,
 } from "react-native";
+import axios from "axios";
 
 export default function Login( {navigation} ){
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
-    const onPress1 = () => navigation.push('Home');
-    const onPress0 = () => navigation.push('SignIn');
+    const onPress0 = () => navigation.push('SignUp');
+    const confirm = async() => {
+        axios.post(" http://192.168.10.105:8000/app/login", {
+            user_id: id,
+            pw: password
+        })
+        .then(function(response) {
+            if (response.data.success == true){
+                navigation.push('Home');
+            }
+            else {
+                Alert.alert('Login failed');
+            }
+        }).catch(function(error) {
+            console.log("login error\n" + error);
+        })
+    };
 
     return(
         <View style={styles.container}>
@@ -45,7 +61,7 @@ export default function Login( {navigation} ){
                 <Text style={styles.loginFailed}>Login Failed. Please re-enter Id & Password.</Text>
             </View>
 
-            <TouchableOpacity style={styles.loginBtn} onPress={onPress1}>
+            <TouchableOpacity style={styles.loginBtn} onPress={confirm}>
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
 

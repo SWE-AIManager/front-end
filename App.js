@@ -10,7 +10,7 @@ function App(){
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Login">
                 <Stack.Screen name="Login" component={pages.Login} options={{headerShown:false}}/>
-                <Stack.Screen name="SignIn" component={pages.SignIn} options={{headerShown:false}}/>
+                <Stack.Screen name="SignUp" component={pages.SignUp} options={{headerShown:false}}/>
                 <Stack.Screen name="Home" component={pages.Home} options={{headerShown:false}}/>
                 <Stack.Screen name="Control" component={pages.Control}/>
                 <Stack.Screen name="Exercise" component={pages.Exercise}/>
