@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import * as pages from './src'
 
 const Stack = createStackNavigator();
-
+//이것도 네비게이터로 따로 다른 파일 쓰는게 좋다고는 하는데 이유는 잘 모르겠,,,
 function App(){
     return (
         <NavigationContainer>

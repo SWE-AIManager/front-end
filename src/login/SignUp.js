@@ -22,7 +22,7 @@ export default function SignUp( {navigation} ){
             location: address 
         })
         .then(function(response) {
-            if(response.status == 201, 302, 304) {
+            if(response.status == 201, 302, 304) {  //가능하면 400, 500번대 응답 빼고는 허용 그런식으로 하는게 좋다고 함
                 navigation.push('Login');
             }
         }).catch(function(error){
