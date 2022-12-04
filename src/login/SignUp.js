@@ -22,7 +22,7 @@ export default function SignUp( {navigation} ){
             location: address 
         })
         .then(function(response) {
-            if(response.status == 201, 304) {
+            if(response.status == 201, 302, 304) {
                 navigation.push('Login');
             }
         }).catch(function(error){
