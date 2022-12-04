@@ -17,7 +17,7 @@ export default function Login( {navigation} ){
     const [password, setPassword] = useState("");
     const onPress0 = () => navigation.push('SignUp');
     const confirm = async() => {
-        axios.post(" http://192.168.10.105:8000/app/login", {
+        await axios.post("http://10.0.2.2:8000/app/login/", {
             user_id: id,
             pw: password
         })
@@ -35,7 +35,7 @@ export default function Login( {navigation} ){
 
     return(
         <View style={styles.container}>
-            <Image style={styles.image} source={require("C:\\Users\\nyung\\AIManager\\assets\\logo.png")}/>
+            <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\logo.png")}/>
 
             <StatusBar style="auto"/>
             <View style={styles.inputView}>
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     },
 
     signInText: {
-        fontSize: "13px",
+        fontSize: 13,
         marginTop: 10,
         textDecorationLine: 'underline',
     },

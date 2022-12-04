@@ -15,18 +15,18 @@ export default function SignUp( {navigation} ){
     const [password, setPassword] = useState('');
     const [address, setAddress] = useState('');
     const confirm = async() => {
-        axios.post("http://192.168.10.105:8000/app/users", {
+        await axios.post("http://10.0.2.2:8000/app/users/", {
             user_id: id,
             name: name,
             pw: password,
-            location: address
+            location: address 
         })
         .then(function(response) {
-            if(response.statusCode = 200) {
+            if(response.status == 201, 304) {
                 navigation.push('Login');
             }
         }).catch(function(error){
-            console.log(error);
+            console.log(JSON.stringify(error.response));
         })
     };
 
@@ -126,6 +126,6 @@ const styles = StyleSheet.create({
     },
 
     SignUpText: {
-        fontSize: "18px",
+        fontSize: 18,
     },
 });

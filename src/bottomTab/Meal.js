@@ -7,13 +7,14 @@ import {
     Image,
 } from "react-native";
 
+
 const Meal = () => {
     return(
         <View style={styles.container}>
             <View style={{alignItems: "center"}}>
-                <Image style={styles.image} source={require("C:\\Users\\nyung\\AIManager\\assets\\chicken.jpg")}/>
+                <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\chicken.jpg")}/>
                 <Text style={styles.text}> ▲ Chicken </Text>
-                <Image style={styles.image} source={require("C:\\Users\\nyung\\AIManager\\assets\\sushi.jpeg")}/>
+                <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\sushi.jpeg")}/>
                 <Text style={styles.text}> ▲ Sushi </Text>
             </View>
         </View>
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     },
 
     name: {
-        fontSize: "15px",
+        fontSize: 15,
         height: 20,
         marginTop: 15,
         color: "#808080",

@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     },
 
     airCleanerNo: {
-        fontSize: "13px",
+        fontSize: 13,
         height:15,
         marginTop: 15,
         marginLeft: 10,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     },
 
     airConditionerNo: {
-        fontSize: "13px",
+        fontSize: 13,
         height:15,
         marginTop: 15,
         marginLeft: 10,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     },
 
     tvNo: {
-        fontSize: "13px",
+        fontSize: 13,
         height:15,
         marginTop: 15,
         marginLeft: 10,
