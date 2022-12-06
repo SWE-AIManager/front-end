@@ -6,15 +6,19 @@ import{
     TouchableOpacity,
     StyleSheet,
     style,
+    Alert,
 } from 'react-native';
 import axios from "axios";
+//import {useNavigate} from 'react-router-dom'
 
 export default function SignUp( {navigation} ){
     const [name, setName] = useState('');
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [address, setAddress] = useState('');
-    const confirm = async() => {
+    const back = () => navigation.push('Login');
+
+    const confirm = async( {navigation} ) => {
         await axios.post("http://10.0.2.2:8000/app/users/", {
             user_id: id,
             name: name,
@@ -23,11 +27,12 @@ export default function SignUp( {navigation} ){
         })
         .then(function(response) {
             if(response.status == 201, 302, 304) {  //가능하면 400, 500번대 응답 빼고는 허용 그런식으로 하는게 좋다고 함
-                navigation.push('Login');
+                Alert.alert("Jansori의 회원이 되신 것을 환영합니다!");
             }
         }).catch(function(error){
             console.log(JSON.stringify(error.response));
         })
+        
     };
 
     return(
@@ -81,6 +86,8 @@ export default function SignUp( {navigation} ){
 
             <TouchableOpacity style={styles.SignUpBtn} onPress={confirm}>
                 <Text style={styles.SignUpText}> SIGN UP </Text>
+            </TouchableOpacity><TouchableOpacity style={styles.LoginBtn} onPress={back}>
+                <Text style={styles.LoginText}> LOGIN </Text>
             </TouchableOpacity>
         </View>
     );
@@ -127,5 +134,21 @@ const styles = StyleSheet.create({
 
     SignUpText: {
         fontSize: 18,
+    },
+    
+    LoginBtn: {
+        width: "80%",
+        borderRadius: 10,
+        height: 50,
+        marginTop: 20,
+        marginLeft: 35,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#808080",
+    },
+
+    LoginText: {
+        fontSize: 18,
+        color: "#fca503",
     },
 });

@@ -33,7 +33,7 @@ export default function Home( {navigation} ){
         var date = new date();
         var dateStr = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() + " "
                         + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-        axios.post("http://10.0.2.2:8000/app/meal/", {
+        await axios.post("http://10.0.2.2:8000/app/meal/", {
             recent_meal_id: id,
             recent_meal: dateStr
         })
@@ -49,7 +49,7 @@ export default function Home( {navigation} ){
         var date = new date();
         var dateStr = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() + " "
                         + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-        axios.post("http://10.0.2.2:8000/app/clean/", {
+        await axios.post("http://10.0.2.2:8000/app/clean/", {
             recent_clean_id: id,
             recent_clean: dateStr
         })
@@ -65,6 +65,7 @@ export default function Home( {navigation} ){
     return (
         <View style={styles.container}>
             <View style={styles.box}>
+                <Text style={styles.welcome}> 허유영님, 오늘 하루를 기록해주세요! </Text>
                 <Text style={styles.question}> 운동했어~? </Text>
                 <View style={styles.yesOrNo}>
                     <TouchableOpacity style={styles.yesBtn} onPress={confirmExercise}>
@@ -121,9 +122,16 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
 
+    welcome: {
+        fontSize: 20,
+        marginTop: 15,
+        marginLeft: 45,
+        color: "#808080",
+    },
+
     question: {
         fontSize: 18,
-        marginTop: 60,
+        marginTop: 40,
         marginLeft: 70,
     },
 

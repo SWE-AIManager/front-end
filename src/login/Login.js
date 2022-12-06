@@ -10,13 +10,15 @@ import{
     TouchableOpacity,
     style,
 } from "react-native";
+
 import axios from "axios";
 
-export default function Login( {navigation} ){
+export default function Login( {navigation} ) {
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
     const onPress0 = () => navigation.push('SignUp');
     const confirm = async() => {
+        /*
         await axios.post("http://10.0.2.2:8000/app/login/", {
             user_id: id,
             pw: password
@@ -30,7 +32,8 @@ export default function Login( {navigation} ){
             }
         }).catch(function(error) {
             console.log("login error\n" + error);
-        })
+        })*/
+        navigation.push('Home');
     };
 
     return(
