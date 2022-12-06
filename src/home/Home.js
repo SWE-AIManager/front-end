@@ -22,7 +22,7 @@ export default function Home( {navigation} ){
             recent_exercise: dateStr
         })
         .then(function(response) {
-            if(response.statusCode = 200, 304) {
+            if(response.statusCode == 200, 304) {
                 Alert.alert("Exercise Saved");
             }
         }).catch(function(error){
@@ -38,7 +38,7 @@ export default function Home( {navigation} ){
             recent_meal: dateStr
         })
         .then(function(response) {
-            if(response.statusCode = 200, 304) {
+            if(response.statusCode == 200, 304) {
                 Alert.alert("Meal Saved");
             }
         }).catch(function(error){
@@ -54,7 +54,7 @@ export default function Home( {navigation} ){
             recent_clean: dateStr
         })
         .then(function(response) {
-            if(response.statusCode = 200, 304) {
+            if(response.statusCode == 200, 304) {
                 Alert.alert("Cleaning Saved");
             }
         }).catch(function(error){
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
 
     welcome: {
         fontSize: 20,
+        fontWeight: "bold",
         marginTop: 15,
         marginLeft: 45,
         color: "#808080",
