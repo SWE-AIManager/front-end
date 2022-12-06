@@ -86,7 +86,9 @@ export default function SignUp( {navigation} ){
 
             <TouchableOpacity style={styles.SignUpBtn} onPress={confirm}>
                 <Text style={styles.SignUpText}> SIGN UP </Text>
-            </TouchableOpacity><TouchableOpacity style={styles.LoginBtn} onPress={back}>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={styles.LoginBtn} onPress={back}>
                 <Text style={styles.LoginText}> LOGIN </Text>
             </TouchableOpacity>
         </View>
