@@ -1,6 +1,7 @@
 import React from "react";
 import {
     View,
+    ScrollView,
     Text,
     style,
     StyleSheet,
@@ -10,12 +11,9 @@ import YoutubePlayer, {YoutubeIframeRef} from "react-native-youtube-iframe";
 
 const Exercise = () => {
     return(
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.video}>
                 <View flexDirection="row">
-                    <TouchableOpacity style={styles.hashtag0}>
-                        <Text style={styles.tagText}> #홈트 </Text>
-                    </TouchableOpacity>
                     <TouchableOpacity style={styles.hashtag}>
                         <Text style={styles.tagText}> #스트레칭 </Text>
                     </TouchableOpacity>
@@ -35,6 +33,9 @@ const Exercise = () => {
                         <Text style={styles.tagText}> #홈트 </Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.hashtag}>
+                        <Text style={styles.tagText}> #유산소 </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.hashtag}>
                         <Text style={styles.tagText}> #다이어트 </Text>
                     </TouchableOpacity>
                 </View>
@@ -44,8 +45,26 @@ const Exercise = () => {
                     play={false}
                     videoId={"lKwZ2DU4P-A"}
                 />
+
+                <View flexDirection="row">
+                    <TouchableOpacity style={styles.hashtag}>
+                        <Text style={styles.tagText}> #근력 </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.hashtag0}>
+                        <Text style={styles.tagText}> #맨몸운동 </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.hashtag}>
+                        <Text style={styles.tagText}> #전신 </Text>
+                    </TouchableOpacity>
+                </View>
+                <YoutubePlayer
+                    height={240}
+                    width={320}
+                    play={false}
+                    videoId={"CYcLODSeC-c"}
+                />
             </View>
-        </View>
+        </ScrollView>
     );
 };
 

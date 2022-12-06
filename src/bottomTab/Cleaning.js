@@ -22,18 +22,17 @@ const Cleaning = () => {
         })
         .then(function(response) {
             if(response.status == 201, 302, 304) {  //가능하면 400, 500번대 응답 빼고는 허용 그런식으로 하는게 좋다고 함
-                Alert.alert("Save Clean Cycle");
+                Alert.alert("Clean Cycle Saved");
             }
         }).catch(function(error){
             console.log(JSON.stringify(error.response));
         })
-        
     };
 
     return(
         <View style={styles.container}>
             <View style={styles.enterCleanCycle}>
-                <Text style={styles.formText}> 청소주기입력 </Text>
+                <Text style={styles.formText}> 허유영님의 청소주기 </Text>
                 <View style={styles.inputView}>
                     <TextInput
                         style={styles.TextInput}
@@ -106,52 +105,59 @@ const Cleaning = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        justifyContent: "center",
-    },
+            flex: 1,
+            backgroundColor: "#fff",
+        },
 
-    enterCleanCycle: {
-        flexDirection : "row",
-    },
+        enterCleanCycle: {
+            flexDirection : "row",
+            alignItems: "center",
+            marginTop: 50,
+            marginBottom: 50,
+        },
 
-    formText: {
-        marginLeft: 50,
-    },
+        formText: {
+            marginLeft: 90,
+            fontSize: 17,
+            fontWeight: "bold",
+            color: "#606060"
+        },
 
-    TextInput: {
-        height: 30,
-        flex: 1,
-        padding:10,
-        marginLeft: 10,
-    },
+        TextInput: {
+            height: 30,
+            flex: 1,
+            padding:5,
+            marginLeft: 20,
+        },
 
-    inputView: {
-        backgroundColor: "#fcebca",
-        borderRadius: 10,
-        width: "30%",
-        height: 30,
-        marginLeft: 10,
-    },
+        inputView: {
+            backgroundColor: "#fcebca",
+            borderRadius: 10,
+            width: "15%",
+            height: 30,
+            marginLeft: 5,
+        },
 
-    confirmBtn: {
-        width: "30%",
-        borderRadius: 10,
-        height: 30,
-        marginLeft: 10,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#fca503",
-    },
+        confirmBtn: {
+            width: "15%",
+            borderRadius: 10,
+            height: 30,
+            marginLeft: 5,
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#fca503",
+        },
 
-    SignUpText: {
-        fontSize: 13,
-    },
+        confirmText: {
+            fontSize: 13,
+            fontWeight: "bold",
+            color: "#606060"
+        },
 
-    checkbox: {
-        marginLeft: 90,
-        marginBottom: 50,
-    },
+        checkbox: {
+            marginLeft: 110,
+            marginTop: 50,
+        },
 });
 
 export default Cleaning;

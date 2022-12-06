@@ -1,6 +1,7 @@
 import React from "react";
 import {
     View,
+    ScrollView,
     Text,
     style,
     StyleSheet,
@@ -10,14 +11,22 @@ import {
 
 const Meal = () => {
     return(
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={{alignItems: "center"}}>
+                <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\ttoekbokki.jpg")}/>
+                <Text style={styles.text}> ▲ 떡볶이 </Text>
+                <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\bossam.jpg")}/>
+                <Text style={styles.text}> ▲ 보쌈 </Text>
+                <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\sandwich.jpg")}/>
+                <Text style={styles.text}> ▲ 샌드위치 </Text>
+                <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\juk.jpg")}/>
+                <Text style={styles.text}> ▲ 죽 </Text>
                 <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\chicken.jpg")}/>
-                <Text style={styles.text}> ▲ Chicken </Text>
+                <Text style={styles.text}> ▲ 치킨 </Text>
                 <Image style={styles.image} source={require("C:\\Users\\ziziz\\Jansori\\assets\\sushi.jpeg")}/>
-                <Text style={styles.text}> ▲ Sushi </Text>
+                <Text style={styles.text}> ▲ 초밥 </Text>
             </View>
-        </View>
+        </ScrollView>
     );
 };
 
