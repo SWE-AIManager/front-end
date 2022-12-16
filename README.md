@@ -3,6 +3,7 @@
 used language: JavaScript
 
 Framework: ReactNative
+##
 
 ### App.js
 The application is executed with the execution of this code. It allows you to understand the overall structure of the applications. The first screen of the application is designated as a login page.
